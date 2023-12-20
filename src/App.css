@@ -22,9 +22,14 @@
 }
 
 .btn{
-background-color: black;  
+background-color: rgb(11, 179, 64);  
 color: wheat;
 }
+
+.btnn{
+  background-color: rgb(184, 15, 15);  
+  color: wheat;
+  }
 
 .product-holder {
   width: 250px;
@@ -51,7 +56,9 @@ color: wheat;
 }
 
 .add {
-  text-align: center;
+  display: flex;
+
+  justify-content: space-evenly;
 }
 
 
@@ -73,4 +80,13 @@ color: wheat;
 .cart-holder {
   text-align: left;
   margin-left: 10px;
+}
+
+.btnH {
+  background-color: black;
+  color: white;
+  border: 5px solid;
+  border-color: salmon;
+  font-family: 'Times New Roman', Times, serif;
+  
 }

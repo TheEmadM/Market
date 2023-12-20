@@ -1,15 +1,22 @@
 import React from "react";
 
-export default function Button({ onClick }) {
+export default function ButtonAdd({ onClick }) {
   return (
     <div>
       <button className="btn" onClick={onClick}>
         {" "}
-        Add to cart
+        +
       </button>
-      <button className="btn" onClick={onClick}>
+    </div>
+  );
+}
+
+export function ButtonMin({ onClick }) {
+  return (
+    <div>
+      <button className="btnn" onClick={onClick}>
         {" "}
-        Add to cart
+        -
       </button>
     </div>
   );

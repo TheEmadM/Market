@@ -1,7 +1,7 @@
 import "./App.css";
-
 import Product from "./Product";
 import Cart from "./Cart";
+import { useState } from "react";
 
 const cardsData = [
   {
@@ -80,11 +80,30 @@ const cardsData = [
 ];
 
 function App() {
+  const [total, setTotal] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleAddToCart = (price, title, quantity) => {
+    // Update the total using the current total and the price of the product
+    const newTotal = total + price;
+
+    const newItem = { title, price, quantity, totalPrice: price * quantity };
+    setCartItems([...cartItems, newItem]);
+
+    // Log the updated total
+    console.log(`Total Price: ${newTotal}`);
+
+    // Update the total state with the new total
+    setTotal(newTotal);
+
+    // Example: You can perform other actions based on the updated total
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         {" "}
-        سوپرمیوه رجب
+        سوپرمیوه سامان و آروین
         <div className="cart-holder">
           <Cart />
         </div>
@@ -98,6 +117,9 @@ function App() {
             stock={product.stock}
             url={product.url}
             description={product.description}
+            onAddToCart={(price, title, quantity) =>
+              handleAddToCart(price, title, quantity)
+            }
           />
         ))}
       </div>
