@@ -7,31 +7,27 @@ export default function Product(props) {
   const [stock, setStock] = useState(props.stock);
   const [quantity, setQuantity] = useState(0);
 
+  // this function handle adding products to the cart (checks stock, decrease stock, add price to total and increase the quantity of it in cart)
   const handleAddToCart = () => {
     if (stock > 0) {
-      // Call the parent component's function to update the total
       props.onAddToCart(props.price);
 
-      // Decrease the stock by 1
       setStock(stock - 1);
       setQuantity(quantity + 1);
       console.log(
-        `Added ${1} kgs ${props.title} (${
+        `${quantity + 1} kgs of ${props.title} is in the cart.${
           1 * props.price
-        } k.tomans) is added to the cart`
+        } k.tomans is added to your total`
       );
     } else {
-      // Alert if the product is out of stock
       alert(`Sorry, no more ${props.title} left in stock.`);
     }
   };
 
-  const handleMinCart = () => {
-    if (stock <= props.stock - 1) {
-      // Call the parent component's function to update the total
-      props.onAddToCart(-props.price);
+  const handleRemoveFromCart = () => {
+    if (stock < props.totStock) {
+      props.onRemoveFromCart(props.price);
 
-      // Decrease the stock by 1
       setStock(stock + 1);
       setQuantity(quantity - 1);
       console.log(
@@ -40,8 +36,7 @@ export default function Product(props) {
         } k.tomans is removed from your total`
       );
     } else {
-      // Alert if the product is out of stock
-      alert(`no ${props.title} left in your cart.`);
+      alert(`You have no ${props.title} in your cart.`);
     }
   };
 
@@ -62,10 +57,10 @@ export default function Product(props) {
         <p>
           <b>Description:</b> <i>{props.description}</i>
         </p>
-        <div className="add">
+        <div className="add-remove-cart">
           <ButtonAdd onClick={handleAddToCart} />
           <div className="btnH">Add/Remove</div>
-          <ButtonMin onClick={handleMinCart} />
+          <ButtonMin onClick={handleRemoveFromCart} />
         </div>
       </div>
     </div>

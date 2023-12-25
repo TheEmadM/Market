@@ -55,7 +55,7 @@ color: wheat;
   display: inline-flex;
 }
 
-.add {
+.add-remove-cart {
   display: flex;
 
   justify-content: space-evenly;
