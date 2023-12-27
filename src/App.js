@@ -91,6 +91,8 @@ const cardsData = [
 
 function App() {
   const [products, setProducts] = useState(cardsData);
+  const [total, setTotal] = useState(0);
+  const [cart, setCart] = useState(``);
 
   const stockHandlerAdd = (index) => {
     const newProducts = [...products];
@@ -106,25 +108,32 @@ function App() {
 
     setProducts(newProducts);
   };
-  const [total, setTotal] = useState(0);
-  const [cartItems, setCartItems] = useState([]);
 
   const handleAddToCart = (price, title, quantity) => {
     const newTotal = total + price;
 
-    const newItem = { title, price, quantity, totalPrice: price * quantity };
-    setCartItems([...cartItems, newItem]);
+    const newCart = cart + " " + title;
 
     console.log(`Total Price: ${newTotal}`);
 
     setTotal(newTotal);
+    setCart(newCart);
+
+    // this part takes the output string and makes duplicated products pack together in the final result.
+    const seperatedCart = newCart.split(/,?\s+/);
+    const nameCounts = {};
+    seperatedCart.forEach((name) => {
+      nameCounts[name] = (nameCounts[name] || 0) + 1;
+    });
+    const result = Object.entries(nameCounts)
+      .filter(([name, _]) => name.trim() !== "")
+      .map(([name, count]) => `${name} (${count} kgs)`)
+      .join(", ");
+    console.log(result);
   };
   const handleRemoveFromCart = (price, title, quantity) => {
     if (total > 0) {
       const newTotal = total - price;
-
-      const newItem = { title, price, quantity, totalPrice: price * quantity };
-      setCartItems([...cartItems, newItem]);
 
       console.log(`Total Price: ${newTotal}`);
 
@@ -150,13 +159,13 @@ function App() {
             totStock={product.totStock}
             url={product.url}
             description={product.description}
-            onAddToCart={(price, title, quantity) => {
+            onAddToCart={() => {
               stockHandlerAdd(index);
-              handleAddToCart(price, title, quantity);
+              handleAddToCart(product.price, product.title, 1);
             }}
-            onRemoveFromCart={(price, title, quantity) => {
+            onRemoveFromCart={() => {
               stockHandlerRemove(index);
-              handleRemoveFromCart(price, title, quantity);
+              handleRemoveFromCart(product.price, product.title, 1);
             }}
           />
         ))}
