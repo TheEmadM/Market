@@ -47,7 +47,7 @@ color: wheat;
 }
 
 .products {
-  background-color: salmon;
+  background-color: beige;
   padding: 10px;
 }
 
@@ -80,6 +80,9 @@ color: wheat;
 .cart-holder {
   text-align: left;
   margin-left: 10px;
+  font-size: 15px;
+  color: royalblue;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .btnH {

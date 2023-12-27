@@ -2,6 +2,7 @@ import "./App.css";
 import Product from "./Product";
 import Cart from "./Cart";
 import { useState } from "react";
+import NameCountFormatter from "./NameCountFormatter";
 
 const cardsData = [
   {
@@ -118,35 +119,43 @@ function App() {
 
     setTotal(newTotal);
     setCart(newCart);
-
-    // this part takes the output string and makes duplicated products pack together in the final result.
-    const seperatedCart = newCart.split(/,?\s+/);
-    const nameCounts = {};
-    seperatedCart.forEach((name) => {
-      nameCounts[name] = (nameCounts[name] || 0) + 1;
-    });
-    const result = Object.entries(nameCounts)
-      .filter(([name, _]) => name.trim() !== "")
-      .map(([name, count]) => `${name} (${count} kgs)`)
-      .join(", ");
-    console.log(result);
   };
   const handleRemoveFromCart = (price, title, quantity) => {
     if (total > 0) {
       const newTotal = total - price;
-
+      const newCart = cart.replace(" " + title, "");
       console.log(`Total Price: ${newTotal}`);
 
       setTotal(newTotal);
+      setCart(newCart);
     }
   };
   return (
     <div className="App">
       <header className="App-header">
         {" "}
-        سوپرمیوه سامان و آروین
+        <span>سوپرمیوه مشتی رجب</span>
         <div className="cart-holder">
           <Cart />
+          <NameCountFormatter inputString={cart} />
+          <hr></hr>
+          <div
+            style={{
+              color: "orange",
+              fontFamily: "'Times New Roman', Times, serif",
+            }}
+          >
+            <span
+              style={{
+                color: "beige",
+                fontFamily: "'Times New Roman', Times, serif",
+                alignContent: "center",
+              }}
+            >
+              Your total price is:{" "}
+            </span>
+            {total} $
+          </div>
         </div>
       </header>
       <div className="products">
