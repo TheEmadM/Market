@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import ButtonAdd, { ButtonMin } from "./Button";
+import Button from "./Button";
 import { useState } from "react";
 
 export default function Product(props) {
@@ -57,10 +57,17 @@ export default function Product(props) {
         <p>
           <b>Description:</b> <i>{props.description}</i>
         </p>
-        <div className="add-remove-cart">
-          <ButtonAdd onClick={handleAddToCart} />
-          <div className="btnH">Add/Remove</div>
-          <ButtonMin onClick={handleRemoveFromCart} />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            handleAddToCart={handleAddToCart}
+            handleRemoveFromCart={handleRemoveFromCart}
+          />
         </div>
       </div>
     </div>

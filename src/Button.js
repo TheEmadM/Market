@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function ButtonAdd({ onClick }) {
+export function ButtonAdd({ onClick }) {
   return (
     <div>
-      <button className="btn" onClick={onClick}>
+      <button className="Btn-Add" onClick={onClick}>
         {" "}
         +
       </button>
@@ -14,10 +14,20 @@ export default function ButtonAdd({ onClick }) {
 export function ButtonMin({ onClick }) {
   return (
     <div>
-      <button className="btnn" onClick={onClick}>
+      <button className="Btn-Remove" onClick={onClick}>
         {" "}
         -
       </button>
+    </div>
+  );
+}
+
+export default function Button({ handleAddToCart, handleRemoveFromCart }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <ButtonAdd onClick={handleAddToCart} />
+
+      <ButtonMin onClick={handleRemoveFromCart} />
     </div>
   );
 }

@@ -21,14 +21,16 @@
   color: #61dafb;
 }
 
-.btn{
-background-color: rgb(11, 179, 64);  
-color: wheat;
+.Btn-Add{
+background-color: rgb(171, 237, 192);  
+color: rgb(5, 37, 0);
+border-radius: 8px;
 }
 
-.btnn{
-  background-color: rgb(184, 15, 15);  
-  color: wheat;
+.Btn-Remove{
+  background-color: rgb(220, 173, 173);  
+  color: rgb(61, 4, 4);
+  border-radius: 8px;
   }
 
 .product-holder {
