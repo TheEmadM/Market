@@ -4,7 +4,7 @@ export default function Cart() {
   return (
     <>
       <button className="cart">
-        <i className="fa fa-shopping-cart"></i>
+        <span>&gt;&gt;</span>
       </button>
     </>
   );
