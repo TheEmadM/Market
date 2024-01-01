@@ -14,11 +14,6 @@ export default function Product(props) {
 
       setStock(stock - 1);
       setQuantity(quantity + 1);
-      console.log(
-        `${quantity + 1} kgs of ${props.title} is in the cart.${
-          1 * props.price
-        } k.tomans is added to your total`
-      );
     } else {
       alert(`Sorry, no more ${props.title} left in stock.`);
     }
@@ -30,11 +25,6 @@ export default function Product(props) {
 
       setStock(stock + 1);
       setQuantity(quantity - 1);
-      console.log(
-        ` ${quantity - 1} kgs ${props.title} is remained. ${
-          1 * props.price
-        } k.tomans is removed from your total`
-      );
     } else {
       alert(`You have no ${props.title} in your cart.`);
     }
@@ -43,15 +33,18 @@ export default function Product(props) {
   return (
     <div className="product-component">
       <div className="product-holder">
-        <img className="image" src={props.url} alt={props.title} />
+        <img className="product-image" src={props.url} alt={props.title} />
 
         <p>
-          <b>Title:</b> {props.title}
+          <b>Title: {props.title}</b>
         </p>
         <p>
-          <b>Price:</b> {props.price} tomans
+          <b>Price:</b>{" "}
+          <span style={{ color: "#8b0000", fontSize: "18px" }}>
+            {props.price} tomans
+          </span>
         </p>
-        <p>
+        <p style={{ fontFamily: "Roboto" }}>
           <b>Stock:</b> {props.stock} kgs
         </p>
         <p>

@@ -1,3 +1,4 @@
+    /* App and header */
 .App {
   text-align: center;
 }
@@ -8,11 +9,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 35px;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px 4px #4CAF50;
+  font-size: 2.5rem;
   padding-top: 50px;
   padding-bottom: 40px;
-  color: grey;
+  color: #f8f8f2;
   border: 5px solid;
   border-color: gray;
 }
@@ -21,77 +23,165 @@
   color: #61dafb;
 }
 
-.Btn-Add{
-background-color: rgb(171, 237, 192);  
-color: rgb(5, 37, 0);
-border-radius: 8px;
+    /* Products */
+
+.products { /* the space that all products are placed */
+  background-color:#c8d6c4;
+  padding: 10px;
 }
 
-.Btn-Remove{
-  background-color: rgb(220, 173, 173);  
-  color: rgb(61, 4, 4);
+.product-component { /* the space that each product-holder is placed*/
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 8px;
-  }
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 0;
+  display: inline-flex;
+}
 
-.product-holder {
+.product-holder { /*the inside part of each product*/
+  font-family: Merriweather;
   width: 250px;
   height: 400px;
-  background-color: rgb(160, 160, 150);
-  border: 5px solid;
+  background-color:#f8f8f8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 5px;
   margin: 10px;
   text-align: left;
 }
 
-.image{
+.product-component:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+  position: relative;
+  z-index: 0;
+}
+
+.product-image{
   width: 250px;
   height: 175px;
 }
 
-.products {
-  background-color: beige;
-  padding: 10px;
-}
-
-.product-component {
-  display: inline-flex;
-}
-
-.add-remove-cart {
-  display: flex;
-
-  justify-content: space-evenly;
-}
-
-
-.cart {
-  background-color: rgb(11, 11, 12);
-  border: none;
+.Products-Add-Button{
+  padding: 10px 20px;
+  background-color: #a2d9ce; 
   color: white;
-  padding: 12px 16px;
-  font-size: 30px;
+  border: 1px solid #76d7c4; 
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
   cursor: pointer;
-  text-align: left;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
 
-/* Darker background on mouse-over */
-.cart:hover {
-  background-color: salmon;
+.Products-Add-Button:hover {
+  background-color: #88d8c0;
+  border-color: #66c2ac;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
 }
 
-.cart-holder {
-  text-align: left;
-  margin-left: 10px;
-  font-size: 15px;
-  color: royalblue;
-  font-family: 'Times New Roman', Times, serif;
+.Products-Add-Button:active {
+  background-color: #79cbb8;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2);;
 }
 
-.btnH {
-  background-color: black;
+.Products-Remove-Button{
+  padding: 10px 20px;
+  background-color: #f5b7b1;
   color: white;
-  border: 5px solid;
-  border-color: salmon;
-  font-family: 'Times New Roman', Times, serif;
-  
+  border: 1px solid #f1948a;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
+
+.Products-Remove-Button:hover {
+  background-color: #f7a9a8;
+  border-color: #f18281;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+.Products-Remove-Button:active{ 
+  background-color: #f09493;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+    /* Cart component */
+    
+.Cart-Visible { /*becomes visible/invisible when clicked on the cart-button */
+  background-color: #f7f7f2;
+  border: 1px solid #e8e8e8;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #333;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-size: 18px;
+}
+    
+.Cart-Invisible {
+  display: none;
+}
+
+.Cart-Button-Holder { /* the whole button space in the app */
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  color: #444;
+  position: fixed;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: auto;
+  text-align: left;
+  z-index: 1000;
+  }
+  
+.Cart-Button { /* the cart-button */
+  color: white; 
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif; 
+  font-size: 10px; 
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px #397d39;
+  cursor: pointer; 
+  transition: all 0.3s ease 0s; 
+  background-color:#495057; 
+}
+  
+.Cart-Button:hover {
+  background-color: #5f6a7d;
+}
+  
+.Cart-Button:active {
+  box-shadow: 0 2px #397d39; 
+  background-color: #39424e;
+  transform: translateY(10px); 
+}
+
+    /* Footer */
+
+.footer {
+  color: #ffffff; 
+  text-align: center;
+  padding: 20px 0; 
+  font-family: 'Arial', sans-serif; 
+  font-size: 1rem; 
+  border-top: 1px solid #39424e; 
+  background-color: #495057; 
+}
+  
+.footer p {
+  padding: 0; 
+  line-height: 1.5; 
+  margin: 0; 
+}
+  

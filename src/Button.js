@@ -3,7 +3,7 @@ import React from "react";
 export function ButtonAdd({ onClick }) {
   return (
     <div>
-      <button className="Btn-Add" onClick={onClick}>
+      <button className="Products-Add-Button" onClick={onClick}>
         {" "}
         +
       </button>
@@ -14,7 +14,7 @@ export function ButtonAdd({ onClick }) {
 export function ButtonMin({ onClick }) {
   return (
     <div>
-      <button className="Btn-Remove" onClick={onClick}>
+      <button className="Products-Remove-Button" onClick={onClick}>
         {" "}
         -
       </button>
