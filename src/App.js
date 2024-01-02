@@ -39,7 +39,7 @@ const cardsData = [
     description: "ready to be added to your healthy dish.",
   },
   {
-    title: "Cocumber",
+    title: "Cucumber",
     price: 30000,
     stock: 200,
     totStock: 200,
