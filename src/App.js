@@ -13,6 +13,7 @@ const cardsData = [
     url: "https://www.foodrepublic.com/img/gallery/take-the-sting-out-of-pineapple-with-a-salt-water-soak/l-intro-1684948369.jpg",
     description:
       "a good combination of healthy, juicy and pleasureful exprience.",
+    className: "product-1",
   },
   {
     title: "Garlic",
@@ -21,6 +22,7 @@ const cardsData = [
     totStock: 70,
     url: " https://files.nccih.nih.gov/garlic-thinkstockphotos-514990456-square.jpg",
     description: "Enhance flavors with this aromatic essential.",
+    className: "product-1",
   },
   {
     title: "Cabbage",
@@ -29,6 +31,7 @@ const cardsData = [
     totStock: 200,
     url: "https://www.lifespan.org/sites/default/files/styles/featured_image_large/public/2023-09/cabbage-900x600.jpg?h=b69e0e0e&itok=ezYK7-ip",
     description: "fresh and intact.",
+    className: "product-1",
   },
   {
     title: "Avacado",
@@ -37,6 +40,7 @@ const cardsData = [
     totStock: 50,
     url: "https://dims.healthgrades.com/dims3/MMH/81ecc05/2147483647/strip/true/crop/3987x2228+0+264/resize/800x447!/quality/75/?url=https%3A%2F%2Fucmscdn.healthgrades.com%2Fd1%2F63%2F836d13a7481a98f3b5380f34abb0%2Fgettyimages-453276061-rf-hg.jpg",
     description: "ready to be added to your healthy dish.",
+    className: "product-1",
   },
   {
     title: "Cucumber",
@@ -45,6 +49,7 @@ const cardsData = [
     totStock: 200,
     url: "https://img.particlenews.com/image.php?type=thumbnail_580x000&url=2Ej7Mq_0mJnhrRX00",
     description: "best ingredient of every salad!",
+    className: "product-1",
   },
   {
     title: "Tomato",
@@ -53,6 +58,7 @@ const cardsData = [
     totStock: 150,
     url: "https://assets.newatlas.com/dims4/default/d63c69b/2147483647/strip/true/crop/996x664+2+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Fshutterstock_268999940.jpg",
     description: "best quality-greenhouse.",
+    className: "product-1",
   },
   {
     title: "Pitaya",
@@ -61,6 +67,7 @@ const cardsData = [
     totStock: 30,
     url: "https://media.post.rvohealth.io/wp-content/uploads/2020/09/AN445-Dragonfruit-732x549-thumb-732x549.jpg",
     description: "best fit for people who search for new tastes.",
+    className: "product-1",
   },
   {
     title: "Banana",
@@ -69,6 +76,7 @@ const cardsData = [
     totStock: 100,
     url: "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
     description: "delicious like always.",
+    className: "product-1",
   },
   {
     title: "Watermelon",
@@ -78,6 +86,7 @@ const cardsData = [
     url: "https://www.wockhardthospitals.com/wp-content/uploads/2023/10/Top-5-Health-Benefits-of-Watermelon.jpg",
     description:
       "juicy, sweet and of course red: dont believe me? try it yourself.",
+    className: "product-1",
   },
   {
     title: "Pomegrante",
@@ -86,6 +95,7 @@ const cardsData = [
     totStock: 200,
     url: "https://eqhct8esjgc.exactdn.com/wp-content/uploads/2022/11/pomegranate-and-seeds-s.jpg?strip=all&lossy=1&ssl=1",
     description: "hundreds of rubies are there in ordered manner (is it ?).",
+    className: "product-1",
   },
 ];
 
@@ -214,6 +224,7 @@ function App() {
           <Product
             key={index}
             price={product.price}
+            className={product.className}
             title={product.title}
             stock={product.stock}
             totStock={product.totStock}
