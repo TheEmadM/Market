@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Button from "./Button";
 import { useState } from "react";
 
 export default function Product(props) {
@@ -30,26 +29,90 @@ export default function Product(props) {
     }
   };
 
+  function ButtonAdd({ onClick }) {
+    return (
+      <div>
+        <button className="Products-Add-Button" onClick={onClick}>
+          {" "}
+          +
+        </button>
+      </div>
+    );
+  }
+
+  function ButtonMin({ onClick }) {
+    return (
+      <div>
+        <button className="Products-Remove-Button" onClick={onClick}>
+          {" "}
+          -
+        </button>
+      </div>
+    );
+  }
+
+  function Button({ handleAddToCart, handleRemoveFromCart }) {
+    return (
+      <div
+        className="Button-holder"
+        style={{
+          width: "1000px",
+          border: "1px solid",
+          borderColor: "#c8d6c4",
+          borderRadius: "30px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "auto",
+            height: "100%",
+          }}
+        >
+          <span style={{}}>
+            <ButtonMin onClick={handleRemoveFromCart} />
+          </span>
+          <p
+            style={{
+              padding: "0 30px",
+              fontFamily: "Times New Roman",
+              fontSize: "14px",
+              paddingBottom: "5px",
+            }}
+          >
+            {" "}
+            {quantity} kgs{" "}
+          </p>
+          <ButtonAdd onClick={handleAddToCart} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="product-component">
       <div className="product-holder">
-        <img className="product-image" src={props.url} alt={props.title} />
+        <div>
+          <img className="product-image" src={props.url} alt={props.title} />
 
-        <p>
-          <b>Title: {props.title}</b>
-        </p>
-        <p>
-          <b>Price:</b>{" "}
-          <span style={{ color: "#8b0000", fontSize: "18px" }}>
-            {props.price} tomans
-          </span>
-        </p>
-        <p style={{ fontFamily: "Roboto" }}>
-          <b>Stock:</b> {props.stock} kgs
-        </p>
-        <p>
-          <b>Description:</b> <i>{props.description}</i>
-        </p>
+          <p>
+            <b>{props.title}</b>
+          </p>
+          <p>
+            <b>Price:</b>{" "}
+            <span style={{ color: "#8b0000", fontSize: "18px" }}>
+              {props.price} tomans
+            </span>
+          </p>
+          <p style={{ fontFamily: "Roboto" }}>
+            <b>Stock:</b> {props.stock} kgs
+          </p>
+          <p>
+            <b>Description:</b> <i>{props.description}</i>
+          </p>
+        </div>
         <div
           style={{
             display: "flex",
