@@ -241,7 +241,7 @@ function App() {
           />
         ))}
       </div>
-      <footer class="footer">
+      <footer className="footer">
         <p>© 2024 Happy Harvest. All rights reserved.</p>
       </footer>
     </div>
