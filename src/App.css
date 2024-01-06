@@ -73,9 +73,9 @@
 
 .product-text::-webkit-scrollbar {
   width: 12px;
-  height: 0px;
   background: #fafbfb;
   border-radius: 8px;
+  height: 25px;
 }
 
 .product-text::-webkit-scrollbar-thumb {
