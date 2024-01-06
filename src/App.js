@@ -12,7 +12,7 @@ const cardsData = [
     totStock: 40,
     url: "https://www.foodrepublic.com/img/gallery/take-the-sting-out-of-pineapple-with-a-salt-water-soak/l-intro-1684948369.jpg",
     description:
-      "a good combination of healthy, juicy and pleasureful exprience.",
+      "Step into a world of freshness with our hand-picked, sun-ripened tomatoes! Each of these ruby-red jewels has been carefully selected to offer you the pinnacle of flavor and texture.",
     className: "product-1",
   },
   {

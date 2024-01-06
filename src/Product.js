@@ -96,22 +96,23 @@ export default function Product(props) {
       <div className="product-holder">
         <div>
           <img className="product-image" src={props.url} alt={props.title} />
-
-          <p>
-            <b>{props.title}</b>
-          </p>
-          <p>
-            <b>Price:</b>{" "}
-            <span style={{ color: "#8b0000", fontSize: "18px" }}>
-              {props.price} tomans
-            </span>
-          </p>
-          <p style={{ fontFamily: "Roboto" }}>
-            <b>Stock:</b> {props.stock} kgs
-          </p>
-          <p>
-            <b>Description:</b> <i>{props.description}</i>
-          </p>
+          <div className="product-text">
+            <p>
+              <b>{props.title}</b>
+            </p>
+            <p>
+              <b>Price:</b>{" "}
+              <span style={{ color: "#8b0000", fontSize: "18px" }}>
+                {props.price} tomans
+              </span>
+            </p>
+            <p style={{ fontFamily: "Roboto" }}>
+              <b>Stock:</b> {props.stock} kgs
+            </p>
+            <p>
+              <b>Description:</b> <i>{props.description}</i>
+            </p>
+          </div>
         </div>
         <div
           style={{
